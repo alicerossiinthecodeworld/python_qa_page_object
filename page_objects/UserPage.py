@@ -3,13 +3,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from .elements.UserLoginForm import UserLoginForm
+from .BasePage import BasePage
 
 
-class UserPage:
+class UserPage(BasePage):
     PAYMENT_FORM = (By.CSS_SELECTOR, "#payment-new")
-
-    def __init__(self, browser):
-        self.browser = browser
 
     def login_with(self, username, password):
         UserLoginForm(self.browser).login_with(username, password)

@@ -1,12 +1,11 @@
 from selenium.webdriver.common.by import By
 
+from .BasePage import BasePage
 
-class MainPage:
+
+class MainPage(BasePage):
     FEATURE_PRODUCT = (By.CSS_SELECTOR, "#content > div.row .product-layout")
     FEATURE_PRODUCT_NAME = (By.CSS_SELECTOR, ".caption h4 a")
-
-    def __init__(self, browser):
-        self.browser = browser
 
     def click_featured_product(self, number):
         index = number - 1

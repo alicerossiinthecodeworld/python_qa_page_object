@@ -2,14 +2,13 @@ import time
 
 from selenium.webdriver.common.by import By
 
+from .BasePage import BasePage
 
-class ProductPage:
+
+class ProductPage(BasePage):
     WISH_LIST_BUTTON = (By.CSS_SELECTOR, "[data-original-title='Add to Wish List']")
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "#button-cart")
     ADD_TO_COMPARISON = (By.CSS_SELECTOR, "[data-original-title='Compare this Product']")
-
-    def __init__(self, browser):
-        self.browser = browser
 
     def add_to_wish_list(self):
         self.browser.find_element(*self.WISH_LIST_BUTTON).click()

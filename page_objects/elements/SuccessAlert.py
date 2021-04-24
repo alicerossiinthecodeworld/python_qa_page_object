@@ -1,14 +1,13 @@
 from selenium.webdriver.common.by import By
 
+from ..BasePage import BasePage
 
-class SuccessAlert:
+
+class SuccessAlert(BasePage):
     SELF = (By.CSS_SELECTOR, ".alert-success")
     LOGIN = (By.LINK_TEXT, "login")
     SOPPING_CART = (By.LINK_TEXT, "shopping cart")
     PRODUCT_COMPARISON = (By.LINK_TEXT, "product comparison")
-
-    def __init__(self, browser):
-        self.browser = browser
 
     @property
     def it(self):
