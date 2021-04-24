@@ -22,7 +22,7 @@ def browser(request):
     url = request.config.getoption("--url")
 
     # https://www.selenium.dev/documentation/en/webdriver/page_loading_strategy/
-    common_caps = {"pageLoadStrategy": "none"}
+    common_caps = {"pageLoadStrategy": "eager"}
 
     if executor == "local":
         driver = webdriver.Chrome(

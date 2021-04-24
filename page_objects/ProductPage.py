@@ -11,11 +11,11 @@ class ProductPage(BasePage):
     ADD_TO_COMPARISON = (By.CSS_SELECTOR, "[data-original-title='Compare this Product']")
 
     def add_to_wish_list(self):
-        self.browser.find_element(*self.WISH_LIST_BUTTON).click()
+        self._click(self.WISH_LIST_BUTTON)
 
     def add_to_cart(self):
         time.sleep(1)  # Page loading problem
-        self.browser.find_element(*self.ADD_TO_CART_BUTTON).click()
+        self._click(self.ADD_TO_CART_BUTTON)
 
     def add_to_comparison(self):
-        self.browser.find_element(*self.ADD_TO_COMPARISON).click()
+        self._click(self.ADD_TO_COMPARISON)

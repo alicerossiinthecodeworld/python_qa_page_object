@@ -6,18 +6,14 @@ from ..BasePage import BasePage
 class SuccessAlert(BasePage):
     SELF = (By.CSS_SELECTOR, ".alert-success")
     LOGIN = (By.LINK_TEXT, "login")
-    SOPPING_CART = (By.LINK_TEXT, "shopping cart")
+    SOPPING_CART = (By.PARTIAL_LINK_TEXT, "shopping cart")
     PRODUCT_COMPARISON = (By.LINK_TEXT, "product comparison")
 
-    @property
-    def it(self):
-        return self.browser.find_element(*self.SELF)
-
     def click_login(self):
-        self.it.find_element(*self.LOGIN).click()
+        self._click_in_element(self._element(self.SELF), self.LOGIN)
 
     def click_shopping_cart(self):
-        self.it.find_element(*self.SOPPING_CART).click()
+        self._click_in_element(self._element(self.SELF), self.SOPPING_CART)
 
     def click_product_comparison(self):
-        self.it.find_element(*self.PRODUCT_COMPARISON).click()
+        self._click_in_element(self._element(self.SELF), self.PRODUCT_COMPARISON)
