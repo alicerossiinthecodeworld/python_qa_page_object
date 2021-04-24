@@ -9,6 +9,6 @@ class UserLoginForm(BasePage):
     LOGIN_BUTTON = (By.CSS_SELECTOR, "input[value=Login]")
 
     def login_with(self, username, password):
-        self.browser.find_element(*self.INPUT_EMAIL).send_keys(username)
-        self.browser.find_element(*self.INPUT_PASSWORD).send_keys(password)
-        self.browser.find_element(*self.LOGIN_BUTTON).click()
+        self._element(self.INPUT_EMAIL).send_keys(username)
+        self._element(self.INPUT_PASSWORD).send_keys(password)
+        self._element(self.LOGIN_BUTTON).click()

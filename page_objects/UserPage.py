@@ -9,9 +9,7 @@ class UserPage(BasePage):
 
     def login_with(self, username, password):
         UserLoginForm(self.browser).login_with(username, password)
-
-    def click_link(self, link_text):
-        self._click((By.LINK_TEXT, link_text))
+        return self
 
     def verify_pay_form(self):
         self._verify_element_presence(self.PAYMENT_FORM)

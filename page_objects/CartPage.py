@@ -14,3 +14,4 @@ class CartPage(BasePage):
     def verify_product(self, product_name):
         self._verify_element_presence(self.CONTENT)
         self._verify_link_presence(product_name)
+        return self

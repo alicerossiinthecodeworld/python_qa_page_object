@@ -12,3 +12,4 @@ class ComparisonPage(BasePage):
 
     def verify_product_link(self, product_name):
         self._verify_link_presence(product_name)
+        return self
